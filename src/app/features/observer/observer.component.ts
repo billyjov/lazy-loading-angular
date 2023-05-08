@@ -31,12 +31,12 @@ export class ObserverComponent implements OnInit {
 
   public downloadExcelFile(): void {
     import(
-      /* webpackChunkName: 'xlsx-bundle-random-name' */
+      /* webpackChunkName: 'xlsx-bundle-random-name-dev-days' */
       'xlsx'
     ).then((xlsx) => {
       console.log('👀', xlsx);
 
-      // USAGE
+      // 🍿 USAGE
       // const wb: import('xlsx').WorkBook = xlsx.utils.book_new();
     });
   }
@@ -55,10 +55,10 @@ export class ObserverComponent implements OnInit {
              */
             observer.disconnect();
 
-            this.loadObserverChild();
+            // this.loadObserverChild();
 
             // Render CSS
-            this.renderCss();
+            // this.renderCss();
           }
         });
       }
@@ -89,12 +89,12 @@ export class ObserverComponent implements OnInit {
     link.type = 'text/css';
     link.href = stylePath;
 
-    // LOAD EVERYTIME
+    // LOAD every time
     // document.head.appendChild(link);
 
     // LOAD ONLY ONCE
-    if (!document.head.querySelector(`link[href="${stylePath}"]`)) {
-      document.head.appendChild(link);
-    }
+    // if (!document.head.querySelector(`link[href="${stylePath}"]`)) {
+    //   document.head.appendChild(link);
+    // }
   }
 }

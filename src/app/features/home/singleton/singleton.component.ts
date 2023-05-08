@@ -1,13 +1,15 @@
-import { AsyncPipe } from '@angular/common';
+import { AsyncPipe, JsonPipe, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+
 import { Observable } from 'rxjs';
+
 import { User } from '../models';
 
 @Component({
   selector: 'app-singleton',
   templateUrl: './singleton.component.html',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, JsonPipe, NgFor],
   styleUrls: ['./singleton.component.css'],
 })
 export class SingletonComponent implements OnInit {
