@@ -1,6 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { map, Observable } from 'rxjs';
+
+export interface DogImage {
+  message: string[];
+  status: string;
+}
 
 @Component({
   selector: 'app-books',
@@ -8,13 +14,13 @@ import { map, Observable } from 'rxjs';
   styleUrls: ['./books.component.css'],
 })
 export class BooksComponent implements OnInit {
-  public dogImages$!: Observable<string>;
+  public dogImages$!: Observable<string[]>;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     this.dogImages$ = this.http
-      .get<string>(`https://dog.ceo/api/breed/hound/images`)
-      .pipe(map((res: any) => res.message));
+      .get<DogImage>(`https://dog.ceo/api/breed/hound/images`)
+      .pipe(map((res: DogImage) => res.message));
   }
 }
