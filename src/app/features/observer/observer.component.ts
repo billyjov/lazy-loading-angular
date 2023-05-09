@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
+import * as xlsx from 'xlsx';
+
 @Component({
   selector: 'app-observer',
   standalone: true,
@@ -30,15 +32,23 @@ export class ObserverComponent implements OnInit {
   }
 
   public downloadExcelFile(): void {
-    import(
-      /* webpackChunkName: 'xlsx-bundle-random-name-dev-days' */
-      'xlsx'
-    ).then((xlsx) => {
-      console.log('👀', xlsx);
 
-      // 🍿 USAGE
-      // const wb: import('xlsx').WorkBook = xlsx.utils.book_new();
-    });
+    // 🚀 HINT: Bad.... why?	🤔
+    // console.log('👀', xlsx);
+    // const wb: xlsx.WorkBook = xlsx.utils.book_new();
+    // DO SOMETHING WITH XLSX
+
+
+    // 🚀 HINT: Lazy load xlsx library
+    // import(
+    //   /* webpackChunkName: 'xlsx-bundle-random-name-dev-days' */
+    //   'xlsx'
+    // ).then((xlsx) => {
+    //   console.log('👀', xlsx);
+
+    //   // 🍿 USAGE
+    //   // const wb: import('xlsx').WorkBook = xlsx.utils.book_new();
+    // });
   }
 
   private lazyRenderObserverChild(): void {
