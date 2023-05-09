@@ -39,9 +39,13 @@ export class HomeComponent implements OnInit {
     if (this.homeViewContainerRef.length === 0) {
       const ref = this.homeViewContainerRef.createComponent(SingletonComponent);
       ref.instance.users$ = this.users$;
+      
 
       // 🍿 TIP: Also have access to changeDetectorRef
       // ref.changeDetectorRef.detectChanges();
+
+      // 🍿 TIP: Also have access to @Input() bindings: V14+
+      // ref.setInput('componentName', 'Home Widget Singleton');
     }
   }
 

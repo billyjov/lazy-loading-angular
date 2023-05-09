@@ -1,6 +1,12 @@
 <!-- 😅 JUST DEBUG STUFF -->
 <!-- {{ users$ | async | json }} -->
 
+<ng-container *ngIf="componentName">
+  <div class="alert alert-success mt-3">
+    {{ componentName }}
+  </div>
+</ng-container>
+
 <table class="table table-striped mt-5">
   <thead>
     <tr>

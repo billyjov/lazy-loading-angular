@@ -19,8 +19,9 @@ export class BooksComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.dogImages$ = this.http
-      .get<DogImage>(`https://dog.ceo/api/breed/hound/images`)
-      .pipe(map((res: DogImage) => res.message));
+    console.log
+    // this.dogImages$ = this.http
+    //   .get<DogImage>(`https://dog.ceo/api/breed/hound/images`)
+    //   .pipe(map((res: DogImage) => res.message));
   }
 }
