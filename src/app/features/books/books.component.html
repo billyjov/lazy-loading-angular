@@ -29,16 +29,16 @@
 <ng-container *ngFor="let dog of dogImages$ | async; index as i">
 
   <!-- SIMPLE CASE -->
-  <!-- <img [src]="dog" > -->
+  <!-- <img [src]="dog" alt="test" > -->
 
   <!-- LAZY ATTRIBUTE -->
-  <!-- <img [src]="dog" loading="lazy"> -->
+  <!-- <img [src]="dog" loading="lazy" alt=""> -->
 
   <!-- 🚀 Lazy LOADING -->
-  <!-- <img [src]="dog" loading="lazy" height="400" width="400"> -->
+  <!-- <img [src]="dog" alt="" loading="lazy" height="400" width="400"> -->
 
   <!-- 🎈 Built In technique from Angular  -->
-  <!-- <img [ngSrc]="dog" width="400" height="400"> -->
+  <img [ngSrc]="dog" alt="" width="400" height="400">
 
   <!-- DEBUG STUFF -->
   <!-- {{ dog }} -->

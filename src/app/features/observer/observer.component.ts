@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { environment } from 'src/environments/environment';
 
-import * as xlsx from 'xlsx';
+// import * as xlsx from 'xlsx';
 
 @Component({
   selector: 'app-observer',
@@ -40,15 +40,15 @@ export class ObserverComponent implements OnInit {
 
 
     // 🚀 HINT: Lazy load xlsx library
-    // import(
-    //   /* webpackChunkName: 'xlsx-bundle-random-name-dev-days' */
-    //   'xlsx'
-    // ).then((xlsx) => {
-    //   console.log('👀', xlsx);
+    import(
+      /* webpackChunkName: 'xlsx-bundle-random-name-dev-days' */
+      'xlsx'
+    ).then((xlsx) => {
+      console.log('👀', xlsx);
 
-    //   // 🍿 USAGE
-    //   // const wb: import('xlsx').WorkBook = xlsx.utils.book_new();
-    // });
+      // 🍿 USAGE
+      // const wb: import('xlsx').WorkBook = xlsx.utils.book_new();
+    });
   }
 
   private lazyRenderObserverChild(): void {
@@ -65,10 +65,10 @@ export class ObserverComponent implements OnInit {
              */
             observer.disconnect();
 
-            // this.loadObserverChild();
+            this.loadObserverChild();
 
             // Render CSS
-            // this.renderCss();
+            this.renderCss();
           }
         });
       }
@@ -103,8 +103,8 @@ export class ObserverComponent implements OnInit {
     // document.head.appendChild(link);
 
     // LOAD ONLY ONCE
-    // if (!document.head.querySelector(`link[href="${stylePath}"]`)) {
-    //   document.head.appendChild(link);
-    // }
+    if (!document.head.querySelector(`link[href="${stylePath}"]`)) {
+      document.head.appendChild(link);
+    }
   }
 }

@@ -8,6 +8,6 @@ import { CommonModule } from '@angular/common';
   templateUrl: './standalone-sticker.component.html',
   styleUrls: ['./standalone-sticker.component.css']
 })
-export class StandaloneStickerComponent {
+export default class StandaloneStickerComponent {
 
 }

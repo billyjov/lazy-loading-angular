@@ -45,17 +45,17 @@ export class HomeComponent implements OnInit {
       // ref.changeDetectorRef.detectChanges();
 
       // 🍿 TIP: Also have access to @Input() bindings: V14+
-      // ref.setInput('componentName', 'Home Widget Singleton');
+      ref.setInput('componentName', 'Home Widget Singleton');
     }
   }
 
   public loadSuperPowers(): void {
     
     // 🍿 TIP: Lazy load services
-    // import('../shared/services/superpower.service').then(ref => {
-    //   const service = this.injector.get(ref.SuperpowerService);
+    import('../shared/services/superpower.service').then(ref => {
+      const service = this.injector.get(ref.SuperpowerService);
 
-    //   this.superpowers = service.getSuperpowers();
-    // });
+      this.superpowers = service.getSuperpowers();
+    });
   }
 }

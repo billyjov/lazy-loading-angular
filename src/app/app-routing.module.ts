@@ -18,22 +18,22 @@ const routes: Route[] = [
     path: '',
     component: HomeComponent,
   },
-  {
-    path: 'standalone',
-    loadComponent: () =>
-      import('./features/standalone-sticker/standalone-sticker.component').then(
-        m => m.StandaloneStickerComponent
-      ),
-  },
+  // {
+  //   path: 'standalone',
+  //   loadComponent: () =>
+  //     import('./features/standalone-sticker/standalone-sticker.component').then(
+  //       m => m.StandaloneStickerComponent
+  //     ),
+  // },
 
   /**
    * 🚀 HINT: Use default export to lazy load component or module.
    * @see: https://github.com/angular/angular/pull/47586
    */
-  // {
-  //   path: 'standalone',
-  //   loadComponent: () => import('./features/standalone-sticker/standalone-sticker.component'),
-  // },
+  {
+    path: 'standalone',
+    loadComponent: () => import('./features/standalone-sticker/standalone-sticker.component'),
+  },
   {
     path: 'observer',
     loadComponent: () =>

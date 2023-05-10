@@ -20,8 +20,8 @@ export class BooksComponent implements OnInit {
 
   ngOnInit(): void {
     console.log
-    // this.dogImages$ = this.http
-    //   .get<DogImage>(`https://dog.ceo/api/breed/hound/images`)
-    //   .pipe(map((res: DogImage) => res.message));
+    this.dogImages$ = this.http
+      .get<DogImage>(`https://dog.ceo/api/breed/hound/images`)
+      .pipe(map((res: DogImage) => res.message));
   }
 }
